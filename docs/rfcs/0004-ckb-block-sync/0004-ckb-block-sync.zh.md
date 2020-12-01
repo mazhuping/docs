@@ -1,14 +1,14 @@
 ---
 id: 0004-ckb-block-sync.zh
-title: CKB 链同步协议
-sidebar_label: 04：CKB 链同步协议
+title: CKB 区块同步协议
+sidebar_label: 04：CKB 区块同步协议
 ---
 
 |  Number   |  Category |   Status  |   Author  |Organization| Created  |
 | --------- | --------- | --------- | --------- | --------- | --------- |
 | 0004 | Standards Track | Proposal | Ian Yang  |Nervos Foundation|2018-07-25|
 
-# 链同步协议
+# 区块同步协议
 
 术语说明
 
@@ -20,7 +20,7 @@ sidebar_label: 04：CKB 链同步协议
 
 ## 同步概览
 
-块同步**必须**分阶段进行，采用 [Bitcoin Headers First](https://bitcoin.org/en/glossary/headers-first-sync) 的方式。每一阶段获得一部分块的信息，或者基于已有的块信息进行验证，或者两者同时进行。
+区块同步**必须**分阶段进行，采用 [Bitcoin Headers First](https://bitcoin.org/en/glossary/headers-first-sync) 的方式。每一阶段获得一部分块的信息，或者基于已有的块信息进行验证，或者两者同时进行。
 
 1.  连接块头 (Connect Header): 获得块头，验证块头格式正确且 PoW 工作量有效
 2.  下载块 (Download Block): 获得块内容，验证完整的块，但是不依赖祖先块中的交易信息。
